@@ -1,0 +1,124 @@
+/*
+  ================================================================================
+  ARQUIVO DE ESTILO PRINCIPAL - ToDo List Manager
+  ================================================================================
+  Autor: Gabriel
+  Cor Base: Azul Real (#0056b3)
+*/
+
+/* -- Variáveis de Cor para fácil manutenção -- */
+:root {
+  --cor-primaria: #0056b3; /* Um tom de azul real, profissional e forte */
+  --cor-primaria-hover: #007bff; /* Um azul mais claro para efeitos de hover */
+  --cor-fundo-item: #f8f9fa; /* Um cinza bem claro para o fundo dos itens da lista */
+  --cor-fundo-item-hover: #e9ecef; /* Um cinza um pouco mais escuro para o hover dos itens */
+  --sombra-padrao: 0 4px 8px rgba(0, 0, 0, 0.08); /* Sombra suave para os botões */
+  --sombra-hover: 0 6px 12px rgba(0, 0, 0, 0.15); /* Sombra mais pronunciada para o hover */
+}
+
+/* -- Estilo do corpo da página -- */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: background-color 0.3s ease;
+}
+
+/* -- Override do Header do Bootstrap para usar nossa cor primária -- */
+.bg-primary {
+  background-color: var(--cor-primaria) !important;
+}
+
+/* -- Override do texto primário para usar nossa cor -- */
+.text-primary {
+  color: var(--cor-primaria) !important;
+}
+
+/* -- Efeitos para os Cards -- */
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: none; /* Remove a borda padrão para um look mais limpo */
+}
+
+.card:hover {
+  transform: translateY(-5px); /* Efeito de "flutuar" ao passar o mouse */
+  box-shadow: var(--sombra-hover);
+}
+
+/*
+  ========================================
+  EFEITOS ESPECIAIS PARA BOTÕES
+  ========================================
+*/
+.btn {
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-radius: 8px; /* Bordas mais arredondadas */
+  padding: 10px 15px;
+  transition: all 0.2s ease-in-out; /* Transição suave para TODOS os efeitos */
+  box-shadow: var(--sombra-padrao);
+}
+
+.btn:hover {
+  transform: translateY(-3px); /* Efeito de "levantar" o botão */
+  box-shadow: var(--sombra-hover);
+}
+
+.btn:active {
+  transform: translateY(1px) scale(0.98); /* Efeito de "pressionar" o botão */
+  box-shadow: none; /* Remove a sombra ao clicar */
+}
+
+/* -- Estilo customizado para o botão primário (azul) -- */
+.btn-primary {
+  background-color: var(--cor-primaria);
+  border-color: var(--cor-primaria);
+}
+
+.btn-primary:hover {
+  background-color: var(--cor-primaria-hover);
+  border-color: var(--cor-primaria-hover);
+}
+
+/* -- Estilo customizado para botões de contorno -- */
+.btn-outline-primary {
+  color: var(--cor-primaria);
+  border-color: var(--cor-primaria);
+}
+
+.btn-outline-primary:hover {
+  color: #fff;
+  background-color: var(--cor-primaria);
+  border-color: var(--cor-primaria);
+}
+
+/*
+  ========================================
+  ESTILIZAÇÃO DA LISTA DE TAREFAS
+  ========================================
+*/
+/* Remove o estilo padrão da <ul> */
+#list_listadeTarefas {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Estilo para cada item <li> da lista */
+#list_listadeTarefas li {
+  background-color: var(--cor-fundo-item);
+  padding: 15px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  border-left: 5px solid var(--cor-primaria); /* Destaque azul na lateral */
+  box-shadow: var(--sombra-padrao);
+  transition: all 0.25s ease; /* Transição suave */
+  cursor: pointer;
+}
+
+/* Efeito ao passar o mouse sobre um item da lista */
+#list_listadeTarefas li:hover {
+  background-color: var(--cor-fundo-item-hover);
+  border-left-color: var(--cor-primaria-hover);
+  transform: translateX(10px); /* Desliza o item para a direita */
+  box-shadow: var(--sombra-hover);
+}
