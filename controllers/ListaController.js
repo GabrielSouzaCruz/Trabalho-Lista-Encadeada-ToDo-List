@@ -81,7 +81,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Função para inserir uma nova tarefa na lista, mantendo a ordem de prioridade.
     function inserirPrioridade() {
         const novaTarefa = leiaDadosTarefa(); // Chama a função para ler e validar os dados do formulário.
-        if (novaTarefa === null) return; // Se a leitura dos dados falhou (retornou null), interrompe a função aqui mesmo.
+        if (novaTarefa === null) 
+            return; // Se a leitura dos dados falhou (retornou null), interrompe a função aqui mesmo.
 
         const novaPrioridade = novaTarefa.prioridade; // Pega o valor da prioridade da tarefa recém-criada.
 

@@ -47,22 +47,6 @@ class Tarefa{
     }
 
     /**
-     * Compara esta tarefa com outra para ver se são iguais.
-     * Útil para futuras funcionalidades de busca ou verificação de duplicados.
-     * @param {Tarefa} outraTarefa O objeto Tarefa a ser comparado.
-     * @returns {boolean} Verdadeiro se a descrição e prioridade forem iguais.
-     */
-    equals(outraTarefa) {
-        // Verifica se o objeto passado é realmente uma instância de Tarefa.
-        if (!(outraTarefa instanceof Tarefa)) {
-            return false;
-        }
-        // Compara os atributos relevantes para determinar a igualdade.
-        return this.#prioridade === outraTarefa.prioridade && 
-               this.#descricao === outraTarefa.descricao;
-    }
-
-    /**
      * Retorna uma representação em texto da tarefa, formatada para exibição na tela.
      * @returns {string} A string formatada.
      */
